@@ -12,20 +12,168 @@
             <h1 style = " text-align: center">HTML5 Tags </h1>
         </header>
         <h2>Video</h2>
-        <video width="320" height="240" controls autoplay>
-            <source src="intro.mp4" type="video/mp4">
+        <h3>Let's start with just the video tag.</h3>
+        <p>HTML CODE:<br /> &lt;video&gt;<br />&lt;source src="disney.mp4" type="video/mp4"&gt;<br/>&lt;/video&gt;</p>
+        
+        <video>
+            <source src="disney.mp4" type="video/mp4">
         </video>
-        <video src="intro.mp4" width="320" height="200" controls preload></video>
         
-        <video src="cit261/intro.mp4" width="320" height="200" controls preload></video>
+        <h3>Here we see some problems.</h3>
+        <h3>The default size is pretty big so let's make it smaller using the width and height attributes</h3>
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200"&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
         
-        <div><p>
-        <video width="320" height="240" controls>
-            <source src="intro.mp4" type="video/mp4">
-            </video></p></div>
+        <video width="300" height="200">
+            <source src="disney.mp4" type="video/mp4">
+        </video>
+        
+        <h3>Now we have another BIGGER problem. The video doen't play. There are a few options for how to make the video play</h3>
+        
+       
+        
+        <h3>1. Autoplay the video</h3>
+        
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200" autoplay&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
+        
+        <video width="300" height="200" autoplay>
+            <source src="disney.mp4" type="video/mp4">
+        </video>
+       
+         <h3>We run into another problem with autoplay. After the auto play the user can't watch the video again. We can fix this by adding controls, as well as autoplay</h3>
+        
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200" autoplay controls&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
+        
+        <video width="300" height="200" autoplay controls>
+            <source src="disney.mp4" type="video/mp4">
+        </video>
+        
+       
+        
+         <h3>2. Give the user controls to play the video</h3>
+        
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200" controls&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
+        
+        <video width="300" height="200" controls>
+            <source src="disney.mp4" type="video/mp4">
+        </video>
+        
+        
+        
+        <h3>3. Loop the video</h3>
+        
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200" loop&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
+        
+        <p>I didn't add this video because I didn't want to listen to it on loop always.</p>
+        
+        <h3>Now a black screen looks a bit abnormal when the video is not being played. We fix this by adding a poster attribute that shows an image while the video is not being played.</h3>
+        
+        <p>HTML CODE: <br /> &lt;video width="300" height = "200" controls poster='disney.jpeg'&gt;<br />&ltsource src="disney.mp4" type="video/mp4"&gt;<br />&lt;/video&gt;</p>
+        
+        <video width="300" height="200" controls poster='disney.jpeg'>
+            <source src="disney.mp4" type="video/mp4">
+        </video>
+        
+
         <h2>Audio</h2>
-        <h2>Canvas</h2>
         
+        <h3>We will start with just the audio tag again.</h3>
+        
+        <p>HTML CODE:<br /> &lt;audio&gt;<br />&lt;source src="musicBox.mp3" type="audio/mp3"&gt;<br/>&lt;/audio&gt;</p>
+        
+        <audio>
+            <source src="musicBox.mp3" type="audio/mp3">
+        </audio>
+        
+        <h3>The audio doesn't appear unless we add the controls attribute.</h3>
+        
+        <p>HTML CODE:<br /> &lt;audio controls&gt;<br />&lt;source src="musicBox.mp3" type="audio/mp3"&gt;<br/>&lt;/audio&gt;</p>
+        
+        <audio controls>
+            <source src="musicBox.mp3" type="audio/mp3">
+        </audio>
+        
+        <h3>We can also autoplay and loop the audio. This is done in the same manner as the video tag.</h3>
+        
+        
+        
+        <h2>Canvas</h2>
+        <h3>The canvas tag is a container for graphics. We must use JavaScript to actually draw the graphics</h3>
+        
+        <h3>We can start by simply adding a border to the canvas so we can see it. </h3>
+        
+        <p>&lt;canvas id="exCanvas" width="200" height="100" style="border:1px solid #000000;"&gt;
+        &lt;/canvas&gt;</p>
+        
+        <canvas id="exCanvas" width="200" height="100" style="border:1px solid #000000;">
+        </canvas>
+        
+        <h3>Just like with the video tag we can use the width and height attributes to change the size of our canvas</h3>
+        
+        <h3>Now I am going to show you a few things you can do with a canvas, but you can do anything you can dream up with a canvas.</h3>
+
+        <h3>1. Let's start with a simple line.</h3>
+        
+        <p>&lt;script&gt;<br />
+            var c = document.getElementById("ex1Canvas");<br />
+            var ctx = c.getContext("2d");<br />
+            ctx.moveTo(0,35);<br />
+            ctx.lineTo(200,100)<br />
+            ctx.stroke();<br />
+            &lt;/script&gt;</p>
+        
+        <canvas id="ex1Canvas" width="200" height="100" style="border:1px solid #000000;">
+        </canvas>
+        
+        <script>
+            var c = document.getElementById("ex1Canvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(0,0);
+            ctx.lineTo(200,100)
+            ctx.stroke();
+        </script>
+        
+        <h3>2. </h3>
+        
+        <p>&lt;script&gt;<br />
+            var c = document.getElementById("ex2Canvas");<br />
+            var ctx = c.getContext("2d");<br />
+            ctx.fillStyle = "#FF0879";<br />
+            ctx.fillRect(0,0, 200, 100);<br />
+            &lt;/script&gt;</p>
+        
+        
+        
+        <canvas id="ex2Canvas" width="200" height="100" style="border:1px solid #000000;">
+        </canvas>
+        <script>
+            var c = document.getElementById("ex2Canvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#FF0879";
+            ctx.fillRect(0,0, 200, 100);
+        </script>
+        
+        <h3>3. </h3>
+        
+        <p>&lt;script&gt;<br />
+            var c = document.getElementById("ex3Canvas");<br />
+            var ctx = c.getContext("2d");<br />
+           ctx.font = "30px Georgia";<br />
+            ctx.fillText("Good Job",20,50);<br />
+            &lt;/script&gt;</p>
+        <canvas id="ex3Canvas" width="200" height="100" style="border:1px solid #000000;">
+        </canvas>
+        
+        
+        <script>
+            var canvas = document.getElementById("ex3Canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.font = "30px Georgia";
+            ctx.fillText("Good Job",40,60);
+        </script>
+        
+    
+        
+        <h3>With JavaScript there is so many things that are posible! </h3>
         
     </body>
 </html>
