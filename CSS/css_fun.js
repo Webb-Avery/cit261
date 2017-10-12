@@ -25,6 +25,12 @@ function textChoice()
     document.getElementById("toEdit").style.color = x;
 }
 
+function sizeChoice()
+{
+    var x = document.getElementById("size").value;
+    document.getElementById("toEdit").style.fontSize = x;
+}
+
 function buttonChoice()
 {
     var x = document.getElementById("buttonColor").value;
@@ -36,6 +42,7 @@ function buttonChoice()
     document.getElementById("button6").style.backgroundColor = x;
     document.getElementById("button7").style.backgroundColor = x;
     document.getElementById("button8").style.backgroundColor = x;
+    document.getElementById("button9").style.backgroundColor = x;
 }
 
 function reset()
