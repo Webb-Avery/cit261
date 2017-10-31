@@ -1,0 +1,59 @@
+body {
+    background: azure;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+h1 {
+    font-size: 22;
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+table, div {
+    background-color: cadetblue;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 4px;
+    width: 1000px;
+}
+
+
+div {
+    width: 450px;
+}
+
+td {
+    padding: 5px;
+}
+
+.button{
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 18px;
+}
+
+.input {
+    background-color:azure;
+    border: 2px solid;
+    color: black;
+    padding: 10px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+}

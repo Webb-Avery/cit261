@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DOM Munipulation</title>
+        <link rel="stylesheet" href="dom.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">DOM Manipulation </h1>
+        </header>
+        <h3>DOM(Document Object Model) makes every element of the HTML into an object. This model allows you to use JavaScript to change HTML and CSS aspects of the web page.</h3>
+        
+        <h3>Every time you use the document.getElementByI(id) method you are using the DOM to find the element.</h3>
+        <h3>In the next topic "Manipulating CSS Class Properties Using JavaScript" you will learn how to use JavaScript to change aspects of the CSS impacting an object.</h3>
+        
+        <h2>Let's start with creating a new element. This code will appear inside a function. </h2>
+        <h3>1. Create a new Header 1 tag.</h3>
+        <p>var  newHeader = document.createElement("h1"); </p>
+        <h3>2. Create a text node that will add text to your h1 tag.</h3>
+        <p>var newText = document.createTextNode("Let's add some text!"); </p>
+        <h3>3. Next we will attach the text to the created tag</h3>
+        <p>newHeader.appendChild(newText); </p>
+        <h3>4. Now we will add the element to the document so you can see it on the screen. </h3><p id="location1">document.getElementById("location1").appendChild(newHeader);</p>
+        <button id = "button1" onclick="addHeader()" class='button'>Try it</button>
+
+        <script>
+            function addHeader() {
+        var newHeader = document.createElement("h1");
+        var newText = document.createTextNode("Let's add some text!");
+        newHeader.appendChild(newText);
+        document.getElementById("location1").appendChild(newHeader);
+}
+</script>
+        
+        <h2>Now let's learn now to edit lists </h2>
+        
+         <ul id="list">
+            <li>Item to delete</li>
+            <li>Item </li>
+            <li>Item </li>
+        </ul>
+        
+        <h3>1. Let's learn how to delete an item </h3>
+        <p> function remove() { <br />
+            var list = document.getElementById("list"); <br />
+                
+            list.removeChild(list.childNodes[0); } </p>
+        
+        
+        <button id = "button2" onclick="remove()" class='button'>Remove it!</button>
+
+       
+
+        <script>
+            function remove() {
+            var list = document.getElementById("list");
+                
+            list.removeChild(list.childNodes[0]);
+            }
+        </script>
+        
+        <h3>2. Now we can insert an item. We will use the same techique as above to create a new list element  </h3>
+        <p> function insert() { <br />
+            var newItem = document.createElement("LI"); <br />
+            var textNode = document.createTextNode("New Item"); <br />
+            newItem.appendChild(textNode); <br />
+            var list = document.getElementById("list"); <br />
+                
+            list.insertBefore(newItem,list.childNodes[0]); } </p>
+        
+        
+        <button id = "button2" onclick="insert()" class='button'>Insert New Item</button>
+
+       
+
+        <script>
+            function insert() {
+            var newItem = document.createElement("li"); 
+            var textNode = document.createTextNode("New Item");
+            newItem.appendChild(textNode); 
+            var list = document.getElementById("list");
+            list.insertBefore(newItem,list.childNodes[0]); 
+            } 
+        </script>
+        
+        
+        
+        
+    </body>
+</html>
