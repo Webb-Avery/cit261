@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="loops.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h1>
+            
+            <h2>Loops</h2>
+            <p>Loops are pieces of code that repeat a number of times. JavaScript supports several differnt loops. <br /> <br /> 
+            1. For loop. This loops allows you to travel through the block of code a specific number of times.</p>
+            <div>
+                <p>
+                    for  ( int i  = 0;  &nbsp;i &lt;  5;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br /><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br /><br />
+                    } 
+                </p>
+            </div>
+            
+        <p><br />
+        2. For/In loop. This loop allows you to travel through each propertie in a given object. </p>
+            <div>
+                <p>
+                    var grades = {Test1: "98", Quiz1: "68", Test2: "89"}<br />
+                    var text = ""; <br />
+                    var x;<br />
+                    for  ( x in grades)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += grades[x]; <br />
+                    } 
+                </p>
+            </div>
+     <p><br />3. While loop. This loops allows you to travel through the block of code while a specific condition is met.</p>
+            <div>
+                <p>
+                    while (i &lt; 5 )  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;text += "The current number is " + i; <br />
+                    i ++;<br />
+                    } 
+                </p>
+            </div>
+             <p><br />4. Do/While loop. This loops allows you to travel through the block of code at least once and then while a specific condition is met.</p>
+            <div>
+                <p>
+                    do { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;text += "The current number is " + i; <br />
+                    i ++;<br />
+                    }<br />
+                    while (i &lt; 5 );  &nbsp;&nbsp;  <br />
+                </p>
+            </div>
+        
+            
+            
+            <h2>Conditional Statements </h2>
+            <p>Conditional statements are pieces of code that compute into either true or false. Conditional statements are used to see if two items are the same, different, less than or greater than. </p>
+            
+            <div>
+                <p>
+                    (4 &lt; 6) - True <br />
+                    (6 == 4 + 2) - True <br />
+                    (6 &lt;= 6) - True <br />
+                </p>
+            </div>
+            
+            <h2>Functions</h2>
+            <p>Fuctions are pieces of code that can be used multiple times at different points in the program. Fuctions also take in data through a parameters that impacts the way a function works. </p>
+            
+            <div>
+                <p>
+                    function printNumbers() { <br />
+                    &nbsp;&nbsp; var statement = ""; <br />
+                    &nbsp;&nbsp; for  ( int i  = 0;  &nbsp;i &lt;  5;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br />
+                    &nbsp;&nbsp; return statement;<br />
+                    &nbsp;&nbsp; } <br />
+                    } <br />
+                </p>
+            </div>
+            
+            <h2>Variables</h2>
+            <p>In JavaScript variables are declared using the var keyword. In the above example statement is a varaible that is associated to the string that is being edited. Variables can be of any data type. </p>
+            
+            <h2>Parameters</h2>
+            <p>Parameters are the values found in the parentheses after the function name. The parameters are used to pass information into a function. </p>
+            
+            <div>
+                <p>
+                    function printNumbers(parameter 1) { <br />
+                    &nbsp;&nbsp; var statement = ""; <br />
+                    &nbsp;&nbsp; for  ( int i  = 0;  &nbsp;i &lt;  parameter1;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br />
+                    &nbsp;&nbsp; return statement;<br />
+                    &nbsp;&nbsp; } <br />
+                    } <br />
+                    <br />
+                    var statement = printNumbers(5);
+                </p>
+            </div>
+            
+            <h2>Arrays</h2>
+            <p>Arrays make it able to store multiple items in one variable. Arrays are distinguished by square brackets and use indexs to find items in the variable. </p>
+            
+             <div>
+                <p>
+                    var cookies = ["Sugar" , "Chocolate Chip", "Caramel", "Peanut Butter"]; <br />
+                    var numbers = [8, 2, 6, 9, 3]; <br />
+                    <br />
+                    // access an item <br /> 
+                    var myCookie = cookies[2]; <br />
+                </p>
+            </div>
+            
+            <h2>Associative Arrays</h2>
+            <p>Each JavaScript object is an associative array. Each item in an associative array has a key and a value pair. When we create the grades object we pair together the name of what is being graded and the grade. Anything that has a name for the value can be in an associative array. </p>
+              <div>
+                <p>
+                    var grades = {Test1: "98", Quiz1: "68", Test2: "89"}<br />
+                    var text = ""; <br />
+                    var x;<br />
+                    for  ( x in grades)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text += grades[x]; <br />
+                    } 
+                </p>
+            </div>
+            <br />
+            <br />
+        </header>
+    </body>
+</html>
