@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="transitions.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">TRANSITIONS!</h1>
+        </header>
+        
+        <h2>Why use Transitions?</h2>
+        
+        <p>We use transitions when we want to change the CSS gradually instead of instantly. If we simply change the CSS instantly it can be strange for the user, but if we transition then they can keep up with how we are changing the design.</p>
+        <h2>Designing CSS3 Transitions</h2>
+        
+        <p>Changing CSS can help us highlight what we want the user to see. For example if the user hovers over some text we can make it bigger. We can change somethings color. These will help the user know what we think is important. </p>
+        
+        <h2>Defining CSS3 Transitions</h2>
+        
+        <p>Transitions are made our of many differnt properties that we can customize. <br />
+        1. transition-property: This is the property that we will change with the transition. <br />
+        2. transition-duration: This is how long we want the transition to take to go from the original property to the new property. <br />
+        3. transition-timing-function: There are several differnt options for how you want to transition. <br />
+        &nbsp; &nbsp; Ease starts slow then goes faster then ends slowly. <br />
+            
+        &nbsp; &nbsp; Linear is the same speed the whole time. <br />
+            
+        &nbsp; &nbsp; Ease-in starts slow but then speeds up. <br />
+            
+        &nbsp; &nbsp; Ease-out slows down as the transition progresses  <br />
+            
+            
+        &nbsp; &nbsp; Ease-in-out starts slow and then speeds up only to slow down again at the end. <br />
+
+            
+        &nbsp; &nbsp; cubic-bezier(n,n,n,n) this allows you to defind the values in a cubic-bezier function. <br />
+        4. transition-delay: This is how long you want from the time it is triggered to when it starts. </p>
+        
+        <p>There is also an easy shorthand that allows you to define these four properties in one line.<br \>
+        tranition: This is followed by the property, duration, timeing function and delay seperated by a single space. </p>
+        
+        <p style="color: darkviolet">
+        div { <br />
+            transition-property: width; <br />
+            transition-duration: 5s; <br />
+            transition-timing-function: ease; <br />
+            transition-delay: 1s; <br />
+        }
+        </p>
+        
+        
+        <p style="color: darkviolet">
+        div { <br />
+            transition-property: width 5s ease 1s; <br />
+        }
+        </p>
+        
+        
+        
+        <h2>Triggering CSS3 Transitions</h2>
+        
+        <p>We can use any of the HTML Event Attributes to trigger an Transition. If we want a trasition to happen when the page is loaded for example we can trigger on teh onload event. Probably the most common places to add transitions is on Mouse Events. <br />
+        Here are some mouse events we could trigger our transition on: <br />
+        - onclick <br />
+        - ondblclick <br />
+        - onmouseover <br />
+        - onmousewheel <br />
+        - ondrag <br />
+        - onmousemove <br /></p>
+        
+        <h2>Now let's have some fun!</h2>
+        
+        <p>Hover over these to see them change. </p>
+        
+         <p style="color: darkviolet">
+            transition-property: width 5s ease 1s; <br />
+        </p>
+        
+        <div id="boxEx"></div>
+        
+        <p style="color: darkviolet">
+            transition-property: background-color 5s linear; <br />
+        </p>
+        
+        <div id="colorEx"></div>
+        
+         <p style="color: darkviolet">
+            transition-property: height 5s ease-in; <br />
+        </p>
+        
+        <div id="heightEx"></div>
+        
+        <p>Now have fun adding Transitions</p>
+    </body>
+</html>
