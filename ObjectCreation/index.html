@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="object.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">Objects Creation, Functions, Inheritance, Properties, Methods, Instantiation </h1>
+        </header>
+        <h2>Object Creation</h2>
+        
+        <p>In JavaScript we can create and use objects to store values and methods in an easy to use and manipulate format. In the last topic we talked about what fuctions and variables are and here we will use these principles in objects. 
+        </p>
+        
+        <p>In JavaScript objects have no special keyword they are declared the same way we create any variable with the "var" keyword. Each object can hold as many properties as we can create. Each propertie is a variable holding information. We can also add methods to our object that allow us to do things with the information from the object. Methods are simply functions defined in the object. </p>
+        
+        <p> Here is an example of a train object:</p>
+        
+        <p style="color: darkviolet">var train = { <br />
+            &nbsp; &nbsp;engineName = "Thomas",  <br />
+            &nbsp; &nbsp;trainNumber = 1;  <br />
+            &nbsp; &nbsp;cars = 5,  <br />
+            &nbsp; &nbsp;getEngineName() {  <br />
+             &nbsp; &nbsp;&nbsp; &nbsp;   alert(engineName);            &nbsp; &nbsp;&nbsp; &nbsp;  <br />
+
+            &nbsp; &nbsp;} <br />
+            }; </p>
+        
+        <p>The object name is train. The properties are the engineName, trainNumber, and cars variables. This object also contains a function called getEngineName that sends the engine name as an alert to the page. </p>
+        
+        <h2>Instances of an Object</h2>
+        
+        <p>In the previous example we declared all parts of the object at the same time. Another way we can do this by using the "new" keyword. After we do this we can use the dot operator to declare member properties.</p>
+    
+        <p>Let's try declaring a train object this way:</p>
+        
+        <p style="color: darkviolet">var train = new Object(); <br />
+        train.engineName = "Edward";
+        train.trainNumber = 2;
+        train.cars = 8;
+        </p>
+        
+        <p>We could also create a constructor that would let you populate a function easily, this is a good thing to do if you are created a lot of instances of the object. </p>
+    
+        <p style="color: darkviolet">function newTrain(name, number, cars) { <br />
+        &nbsp; &nbsp; this.engineName = name <br />
+        &nbsp; &nbsp; this.trainNumber = number <br />
+        &nbsp; &nbsp; this.cars = cars <br />
+            };
+        </p>
+        
+        <p>Then we can class the constructor whenever we want to populate and create a new object. </p>
+        
+        <p style="color: darkviolet">var trainThree = new newTrain("Henry", 3, 4); </p>
+        
+        <p>Now you know how to create an object! </p>
+        
+        
+        
+        
+        
+    </body>
+</html>
