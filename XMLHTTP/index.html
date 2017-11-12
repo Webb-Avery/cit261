@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="XML.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">XMLHTTPRequest</h1>
+        </header>
+        
+        <p>In order for us to get a JSON string from a server we need to request data from the web server. We can do this with a XMLHttpReqeust.</p>
+        
+        <p>We can do this with the following code:</p> 
+        
+        <p style="color: darkviolet"> 
+        var xhttp = new XMLHttpRequest(); <br />
+            <br />
+        xhttp.onreadystatechange = function() {  <br />
+        &nbsp;  &nbsp;   &nbsp; if (this.readyState == 4 && this.status == 200) {  <br />
+         &nbsp;  &nbsp;   &nbsp; &nbsp;  &nbsp;  var myObj = JSON.parse(this.responseText); <br /> 
+        &nbsp;  &nbsp;   &nbsp; &nbsp;  &nbsp; document.getElementById("text").innerHTML = myObj.name;<br />
+          &nbsp;  &nbsp;  } <br />
+            }; <br />
+            <br />
+            xhttp.open("GET", "filename", true); <br />
+            xhttp.send(); <br />
+        </p>
+        
+        <p>The first thing we do is create the XMLHttpRequest object. We called this object the xhttp object.</p>
+        
+        <p style="color: darkviolet"> 
+        var xhttp = new XMLHttpRequest();
+        </p>
+        
+        
+        <p>Next we created a function that will tell us when the request will be ready. This function will be executed every time the status changes. As you can see we want it to be at ready state "4" and status "200". When the ready state is not at 4 the sever is not ready to give the information to the page. This function insures that when we request from the server it can respond correctly. Fun Fact the error for page not found is 404. This is the error you have got when a page is not found wondering around the internet. </p>
+        
+        <p style="color: darkviolet"> 
+        xhttp.onreadystatechange = function() {  <br />
+        if (this.readyState == 4 && this.status == 200) 
+        </p>
+        
+        <p>Next we will take the JSON and parse it into an object. We learned about this in the last code topic. Then we can put information into our web page. </p>
+        
+        <p style="color: darkviolet"> 
+      var myObj = JSON.parse(this.responseText); <br /> 
+       document.getElementById("text").innerHTML = myObj.name;<br />
+            </p>
+        
+        <p>When we open the request we are telling the server the type of request. We first say if we want to GET or POST, in this case we are goign to get infromation. Then we get it the file location, and lastely we say if we want it asynchronous or synchronus. True in this case represents asynchronous. </p>
+        
+        <p style="color: darkviolet"> 
+            xhttp.open("GET", "filename", true); <br />
+        </p>
+        
+        
+        <p>Finally we send the request to the server using the send() method and we finished requesting the request. </p>
+        
+        <p style="color: darkviolet"> 
+            xhttp.send(); <br />
+        </p>
+        
+    </body>
+</html>
