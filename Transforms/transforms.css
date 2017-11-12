@@ -1,0 +1,78 @@
+body {
+    background: azure;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+h1 {
+    font-size: 22;
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+table, div {
+    background-color: cadetblue;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 4px;
+    width: 1000px;
+}
+
+
+div {
+    width: 450px;
+}
+
+td {
+    padding: 5px;
+}
+
+#rotateEx {
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    transition: transform 5s linear;
+}
+
+#rotateEx:hover {
+    transform: rotate(360deg)
+}
+
+#scaleEx {
+    width:100px;
+    height:100px;
+    background-color: chartreuse;
+    transition: transform 5s linear;
+}
+
+#scaleEx:hover {
+    transform: scale(2);
+}
+
+#skewEx {
+    width:100px;
+    height:100px;
+    background-color: chartreuse;
+    transition: transform 3s linear;
+}
+
+#skewEx:hover {
+    transform: skewX(25deg);
+}
+
+#translateEx {
+    width:100px;
+    height:100px;
+    background-color: chartreuse;
+    transition: transform 3s linear;
+}
+
+#translateEx:hover {
+    transform: translate(20px, 20px);
+}
