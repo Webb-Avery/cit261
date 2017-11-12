@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="JSON.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">JSON</h1>
+        </header>
+        <h2>What is JSON?</h2>
+        <p>JSON (JavaScript Object Notation) is a way to transfer data between a browser and a server. The data is formated as a pair of names and values seperated by a colon. Here is an example of what JSON looks like from the server.</p>
+        
+        <p style="color: darkviolet"> var jsonText = '{ "engineName":"Thomas", "trainNumber":7, "cars"=:5, "trainType":"amtrak"}'</p>
+        
+        <h2>JSON Parse</h2>
+        <p>We can use an AJAX request in order to get a JSON from the server. After we do that we need to make the JSON information more easily available to us. We can do this eaily with the JSON.parse() function. </p>
+        
+        <p>We call JSON.parse() like this:</p>
+        
+        <p style="color: darkviolet">var trainObj = JSON.parse(jsonText); </p>
+        
+        <p>After you run that function then you can access each member from the JSON through the trainObj properties. </p>
+        
+        <h2>JSON Stringify</h2>
+        
+        <p>Now that we know how to make an JSON string into an object we are going to learn the opposite. We can take an object and use the JSON.stringify() function to make it into JSON string.</p>
+        
+        <p style="color: darkviolet">var jsonString = JSON.stringify(trainObj);</p>
+        
+        <p>Now you can transfer between JSON and objects easily. This will help when you are using JSON to communicate with a server!</p>
+        
+        <p></p>
+        <p></p>
+    </body>
+</html>
