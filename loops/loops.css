@@ -26,6 +26,30 @@ table, div {
     font: Arial;
 }
 
+.button{
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 18px;
+}
+
+.input {
+    background-color:azure;
+    border: 2px solid;
+    color: black;
+    padding: 10px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+}
 
 td {
     padding: 5px;

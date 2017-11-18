@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title></title>
         <link rel="stylesheet" href="loops.css">
+        <script src='loops.js' type="text/javascript"></script>
     </head>
 
 
@@ -16,11 +17,14 @@
             1. For loop. This loops allows you to travel through the block of code a specific number of times.</p>
             <div>
                 <p>
-                    for  ( int i  = 0;  &nbsp;i &lt;  5;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br /><br />
+                    var i; <br />
+                    for  ( i  = 1;  &nbsp;i &lt;  6;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br /><br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br /><br />
                     } 
                 </p>
             </div>
+            <p id="toEditLoop"></p>
+        <button type="button" class="button" id="runloop" onclick="runLoop()">Run Code</button>
             
         <p><br />
         2. For/In loop. This loop allows you to travel through each propertie in a given object. </p>
@@ -34,6 +38,9 @@
                     } 
                 </p>
             </div>
+             <p id="toEditFor"></p>
+        <button type="button" class="button" id="runFor" onclick="forLoop()">Run Code</button>
+            
      <p><br />3. While loop. This loops allows you to travel through the block of code while a specific condition is met.</p>
             <div>
                 <p>
@@ -43,6 +50,9 @@
                     } 
                 </p>
             </div>
+            
+            <p id="toEditWhile"></p>
+        <button type="button" class="button" id="runWhile" onclick="whileLoop()">Run Code</button>
              <p><br />4. Do/While loop. This loops allows you to travel through the block of code at least once and then while a specific condition is met.</p>
             <div>
                 <p>
@@ -54,7 +64,8 @@
                 </p>
             </div>
         
-            
+            <p id="toEditDo"></p>
+        <button type="button" class="button" id="runDo" onclick="doLoop()">Run Code</button>
             
             <h2>Conditional Statements </h2>
             <p>Conditional statements are pieces of code that compute into either true or false. Conditional statements are used to see if two items are the same, different, less than or greater than. </p>
@@ -74,13 +85,16 @@
                 <p>
                     function printNumbers() { <br />
                     &nbsp;&nbsp; var statement = ""; <br />
-                    &nbsp;&nbsp; for  ( int i  = 0;  &nbsp;i &lt;  5;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp; var i; <br />
+                    &nbsp;&nbsp; for  (i  = 0;  &nbsp;i &lt;  5;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
                     &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br />
                     &nbsp;&nbsp; return statement;<br />
                     &nbsp;&nbsp; } <br />
                     } <br />
                 </p>
             </div>
+             <p id="toEditLoop2"></p>
+        <button type="button" class="button" id="runloop2" onclick="runLoop2()">Run Code</button>
             
             <h2>Variables</h2>
             <p>In JavaScript variables are declared using the var keyword. In the above example statement is a varaible that is associated to the string that is being edited. Variables can be of any data type. </p>
@@ -92,7 +106,7 @@
                 <p>
                     function printNumbers(parameter 1) { <br />
                     &nbsp;&nbsp; var statement = ""; <br />
-                    &nbsp;&nbsp; for  ( int i  = 0;  &nbsp;i &lt;  parameter1;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
+                    &nbsp;&nbsp; for  ( i  = 0;  &nbsp;i &lt;  parameter1;&nbsp;&nbsp; i++)  &nbsp;&nbsp; { <br />
                     &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statement &nbsp;= &nbsp; "Printed" &nbsp;+ &nbsp;i&nbsp; + &nbsp;"times"; <br />
                     &nbsp;&nbsp; return statement;<br />
                     &nbsp;&nbsp; } <br />
@@ -101,6 +115,11 @@
                     var statement = printNumbers(5);
                 </p>
             </div>
+            <p id="toEditPara"></p>
+             Parameter Number : 
+        <input type="text" class="input" id="input1">
+        <button type="button" class="button" id="parameter" onclick="parameter()">Run Function</button>
+        <br><br>
             
             <h2>Arrays</h2>
             <p>Arrays make it able to store multiple items in one variable. Arrays are distinguished by square brackets and use indexs to find items in the variable. </p>
