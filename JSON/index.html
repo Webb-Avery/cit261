@@ -23,6 +23,24 @@
         
         <p style="color: darkviolet">var trainObj = JSON.parse(jsonText); </p>
         
+         <p id="toEdit1"></p>
+        <button type="button" class="button" id="button1" onclick="parse()">Try it out!</button>
+        
+        <script>
+        function parse() {    
+            var obj = JSON.parse('{ "engineName":"Thomas", "trainNumber":7, "cars":5, "trainType":"amtrak"}');
+            document.getElementById("toEdit1").innerHTML = obj.engineName +  ", " + obj.trainNumber + ", " + obj.cars + ", " + obj.trainType + "<br />";
+        }
+        function string() {
+            
+            var trainObj = JSON.parse('{ "engineName":"Thomas", "trainNumber":7, "cars":5, "trainType":"amtrak"}');
+            var string = JSON.stringify(trainObj);
+            document.getElementById("toEdit2").innerHTML = string;
+        }
+        </script>
+        
+
+        
         <p>After you run that function then you can access each member from the JSON through the trainObj properties. </p>
         
         <h2>JSON Stringify</h2>
@@ -30,6 +48,9 @@
         <p>Now that we know how to make an JSON string into an object we are going to learn the opposite. We can take an object and use the JSON.stringify() function to make it into JSON string.</p>
         
         <p style="color: darkviolet">var jsonString = JSON.stringify(trainObj);</p>
+        
+         <p id="toEdit2"></p>
+        <button type="button" class="button" id="button1" onclick="string()">Try it out!</button>
         
         <p>Now you can transfer between JSON and objects easily. This will help when you are using JSON to communicate with a server!</p>
         
