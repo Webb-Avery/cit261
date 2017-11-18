@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="animations.css">
+    </head>
+
+
+    <body>
+        <header> 
+            <h1 style = " text-align: center">Animations!</h1>
+        </header>
+        
+        
+        <h2>Designing CSS3 Animations</h2>
+        
+        <p>You can make Animations in the same way we created Transitions and transforms but with animations we can do more then one thing at the same time. </p>
+        
+        <h2>Defining CSS3 Animations</h2>
+        
+        <p>There are many different properties that we can change for animations. The actual animation will always be declared in a @keyframes section. This is what will happen to the element.<br />
+        In the element that we are changing we can define any of these properties. <br /> 
+        - animation-delay: This will tell the element how long to wait before starting the animation. <br />
+        - animaiton-duration: We can play the animation forwards, backwards or in alternate cycles <br />
+        - animation-duration: How long will the animaiton last. <br />
+        - animation-name: This is where you tell the element the name of the @keyframes you will be referencing. 
+        - animation-iteration-count: How many times the animation will be played. 
+        </p>
+        
+        <h2>Triggering CSS3 Animations</h2>
+        
+        <p>We can have animations start when the page first loads or when can have delays on the Animation or  just like transitions and transformations we can use any of the HTML Event Attributes to trigger an Transition. If we want a trasition to happen when the page is loaded for example we can trigger on the onload event. Probably the most common places to add transitions is on Mouse Events. <br />
+        Here are some mouse events we could trigger our transition on: <br />
+        - onclick <br />
+        - ondblclick <br />
+        - onmouseover <br />
+        - onmousewheel <br />
+        - ondrag <br />
+        - onmousemove <br /> </p>
+        
+        <h2>Now let's have some fun!</h2>
+        
+    
+        <p style="color: darkviolet">
+            @keyframes colorEx { <br />
+            from {background-color:  chartreuse; }<br />
+            to {background-color: cornflowerblue}<br />
+        </p>
+        
+        <div id="colorEx"></div>
+        
+        <p style="color: darkviolet">
+            @keyframes moveEx <br />
+              
+            0%   {background-color:chartreuse; left:0px; top:0px;}<br />
+            25%  {background-color:black; left:200px; top:0px;} <br />
+            50%  {background-color:cornflowerblue; left:200px; top:200px;} <br />
+            75%  {background-color:white; left:0px; top:200px;} <br />
+            100% {background-color:chartreuse; left:0px; top:0px;} <br />
+        </p>
+        
+        <div id="moveEx"></div>
+
+                <p style="color: darkviolet">
+          @keyframes funEx <br />
+                     0%   {background-color:chartreuse; left:0px;} <br />
+    50%  {background-color: black; left: 200px; border-radius: 50%; border-color: chartreuse} <br />
+    100% {background-color:chartreuse; left:0px;}
+        </p>
+        
+        <div id="funEx"></div>
+
+        
+    </body>
+</html>
