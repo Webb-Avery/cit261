@@ -3,13 +3,142 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href=".css">
+        <link rel="stylesheet" href="localStorage.css">
     </head>
 
 
     <body>
         <header> 
-            <h1 style = " text-align: center"></h1>
+            <h1 style = " text-align: center">Local Storage</h1>
+            
+            <h2>What is local storage?</h2>
+            <p>Local storage will store data with no expiration data. The data will stay around until you delete it so it will be available the next time you open up the web page.  </p>
+            
+            <h2>Storing in Local Storage</h2>
+            <p>We can store simple data, arrays, associative arrays and objects in local storage. We will need to store our arrays and objects in JSON form to access them correctly. </p>
+            
+            <h3>Simple Data</h3>
+            <p style="color: darkviolet">
+                localStorage.helloString = "Hello! You added a string!"; </p>
+            
+            <h3>Arrays </h3>
+            <p style="color: darkviolet">
+                localStorage.setItem("array", JSON.stringify["first", "second", "third", "forth"]);
+                </p>
+            
+            <h3>Associative Arrays  </h3>
+            <p style="color: darkviolet">
+                var associativeArray = {
+                "first" : "Avery",
+                "last" : "Webb",
+                "age" : "21",
+                } <br />
+                localStorage.setItem("associative", JSON.stringify(associativeArray));
+                </p>
+            
+            <h3>Objects </h3>
+            <p style="color: darkviolet">
+                var Dog = new Object(); <br />
+                 Dog.name = "Coco";  <br />
+                Dog.age = "2";  <br />
+                Dog.color = "black";  <br />
+                Dog.gender = "female"; <br /> 
+                
+                localStorage.setItem("obj", JSON.stringify(Dog));
+                </p>
+            
+            
+            
+            <h2>Retrieving from Local Storage</h2>
+            <p>We will need to transfer our arrays and objects out of JSON form to access them correctly. </p>
+            
+            <h3>Simple Data</h3>
+            <p style="color: darkviolet">
+                output.innerHTML += localStorage.helloString;</p>
+            
+            <h3>Arrays </h3>
+            <p style="color: darkviolet">
+                var savedArray = JSON.parse(localStorage.getItem("array"));
+                    output = savedArray;
+                </p>
+            
+            <h3>Associative Arrays  </h3>
+            <p style="color: darkviolet">
+                var savedAssociative = JSON.parse(localStorage.getItem("associative"));
+                 <br />   Object.keys(savedAssociative).forEach(function(key) {<br />
+            output.innerHTML +=  key +": "+ savedAssociative[key];
+        }, this);
+                </p>
+            
+            <h3>Objects </h3>
+            <p style="color: darkviolet">
+                var savedDog = JSON.parse(localStorage.getItem("obj")); <br />
+                var output = document.getElementById("dog"); <br />
+                dog.innerHTML += savedDog.name;<br />
+                dog.innerHTML += savedDog.age;<br />
+                dog.innerHTML += savedDog.color; <br />
+                dog.innerHTML += savedDog.gender;<br />
+                }
+                </p>
+            
+            
+            <button type="button" class="button"  onclick="storage()">Try It Out! </button>
+
+            <p id="addOutput">OUTPUT: <br /> </p>
+            <p id="dog"></p>
+            
+            <script>
+                function storage() {
+                    //storing everything 
+                    localStorage.helloString = "Hello! You added a string!"; 
+                    
+                    localStorage.setItem("array", 
+                    JSON.stringify(["first", "second", "third", "forth"]));
+                    
+                    var associativeArray = {
+                         "first" : "Avery",
+                         "last" : "Webb",
+                        "age" : "21",
+                        }
+                    localStorage.setItem("associative", JSON.stringify(associativeArray));
+                    
+                    var Dog = new Object(); 
+                 Dog.name = "Coco";  
+                Dog.age = "2";  
+                Dog.color = "black"; 
+                Dog.gender = "female"; 
+                localStorage.setItem("obj", JSON.stringify(Dog));
+                    
+                    
+                // retrive local Storage
+                    
+                    var output = document.getElementById("addOutput");
+                    
+                   
+                    
+                    
+                    output.innerHTML += localStorage.helloString + "<br />";
+                    
+                    
+                    var savedArray = JSON.parse(localStorage.getItem("array"));
+                    output.innerHTML += savedArray + "<br />";
+                    
+                    var savedAssociative = JSON.parse(localStorage.getItem("associative"));
+                    Object.keys(savedAssociative).forEach(function(key) {
+            output.innerHTML +=  key +": "+ savedAssociative[key] + "<br />";
+        }, this);
+                    
+                  
+                
+                
+                 var savedDog = JSON.parse(localStorage.getItem("obj"));
+                var output = document.getElementById("dog");
+                dog.innerHTML += savedDog.name + "<br />";
+                dog.innerHTML += savedDog.age+ "<br />";
+                dog.innerHTML += savedDog.color+ "<br />";
+                dog.innerHTML += savedDog.gender+ "<br />";
+                }
+            </script>
         </header>
     </body>
 </html>
