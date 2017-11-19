@@ -24,6 +24,30 @@ table, div {
     width: 1000px;
 }
 
+.button{
+    background-color: darkred;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 18px;
+}
+
+.input {
+    background-color:azure;
+    border: 2px solid;
+    color: black;
+    padding: 10px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+}
 
 div {
     width: 450px;
@@ -33,3 +57,59 @@ td {
     padding: 5px;
 }
 
+#test1 {
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    transition: all 3s;
+    
+}
+
+.addBorder {
+    border-style: dashed;
+}
+
+
+
+#colorEx {
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+}
+
+.changeColor {
+    animation-name: colorEx;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes colorEx {
+    0% {background-color: chartreuse}
+    50% {background-color: crimson}
+    100% {background-color: deepskyblue}
+}
+
+
+
+
+#funEx {
+    width:100px;
+    height:100px;
+    background-color: chartreuse;
+    position: relative;
+    border-color: black;
+    border: 5px;
+    border-style: dotted;
+}
+
+.addFun {
+    animation-name: funEx;
+    animation-iteration-count: 5;
+    animation-duration: 12s;
+}
+
+@keyframes funEx {
+    0%   {background-color:chartreuse; left:-300px;}
+    50%  {background-color: black; left: 300px; border-radius: 50%; border-color: chartreuse}
+    100% {background-color:chartreuse; left:-300px;}
+}

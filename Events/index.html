@@ -3,13 +3,96 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href=".css">
+        <link rel="stylesheet" href="events.css">
     </head>
 
 
     <body>
         <header> 
-            <h1 style = " text-align: center"></h1>
+            <h1 style = " text-align: center">Triggering CSS Animations with JavaScript</h1>
         </header>
+        
+        <p>Transitions</p>
+        <h2>JavaScript</h2>
+        <p style="color: darkviolet">
+        function addBorder() { <br />
+document.getElementById("test1").classList.add("addBorder"); <br />
+            }
+        <br />
+        </p>
+        <h2>CSS</h2>
+        <p style="color: darkviolet">
+        .addBorder { <br />
+        border-style: dashed; } <br />
+        </p>
+        
+        <button type="button" class="button" onclick="addBorder()">Run Transition</button>
+        
+        <script>
+            function addBorder() {
+                document.getElementById("test1").classList.add("addBorder");
+            }
+        </script>
+        <div id="test1"></div>
+        
+         <h2>JavaScript</h2>
+        <p style="color: darkviolet">
+        function changeColor() { <br />
+document.getElementById("colorEx").classList.add("changeColor"); <br />
+            }
+        <br />
+        </p>
+        <h2>CSS</h2>
+        <p style="color: darkviolet">
+        .changeColor { <br />
+    animation-name: colorEx;<br />
+    animation-duration: 8s; <br />
+    animation-iteration-count: infinite;} <br />
+        </p>
+
+         <button type="button" class="button" onclick="changeColor()">Run Animation</button>
+        
+        <div id="colorEx"></div>
+        
+        <script>
+            function changeColor() {
+                document.getElementById("colorEx").classList.add("changeColor");
+            }    
+        </script>
+        
+        
+         <h2>JavaScript</h2>
+        <p style="color: darkviolet">
+        function addFun() { <br />
+document.getElementById("funEx").classList.add("addFun"); <br />
+            }
+        <br />
+        </p>
+        <h2>CSS</h2>
+        <p style="color: darkviolet">
+        .addFun { <br />
+     animation-name: funEx; <br />
+    animation-iteration-count: 5; <br />
+    animation-duration: 12s;<br />
+        </p>
+
+        
+        <p style="color: darkviolet">
+          @keyframes funEx <br />
+            0%   {background-color:chartreuse; left:0px;} <br />
+        50%  {background-color: black; left: 200px; border-radius: 50%; border-color: chartreuse} <br />
+    100% {background-color:chartreuse; left:0px;}
+        </p>
+        
+        
+         <button type="button" class="button" onclick="addFun()">Run Animation</button>
+        
+        <div id="funEx"></div>
+        
+         <script>
+            function addFun() {
+                document.getElementById("funEx").classList.add("addFun");
+            }    
+        </script>
     </body>
 </html>
