@@ -3,13 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href=".css">
+        <link rel="stylesheet" href="javaScript.css">
     </head>
 
 
     <body>
         <header> 
-            <h1 style = " text-align: center"></h1>
+            <h1 style = " text-align: center">JavaScript Events for Mobile Devices</h1>
+            
+            <h2>onTouchBegin Event</h2>
+        
+            
+            <h2>onLoad Event</h2>
+            
+            <h2>onClick Event</h2>
+            <p>&lt; button type="button" class="button" onclick="addFun()"&gt;Run Animation&lt;/button&gt;   </p>
+            
+             <button type="button" class="button" onclick="addFun()">Run Animation</button>
+        
+        <div id="funEx"></div>
+        
+         <script>
+            function addFun() {
+                document.getElementById("funEx").classList.add("addFun");
+            }    
+        </script>
+            
+            <h2>onMouseOver Event </h2>
+            
+            <p></p>
         </header>
     </body>
 </html>
