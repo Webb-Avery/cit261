@@ -11,8 +11,8 @@
         <header> 
             <h1 style = " text-align: center">JavaScript Events for Mobile Devices</h1>
             
-            <h2>onTouchBegin Event</h2>
-        
+            <h2>onTouch Events</h2>
+           
             
             <h2>onLoad Event</h2>
             
@@ -30,6 +30,40 @@
         </script>
             
             <h2>onMouseOver Event </h2>
+        <p>       function mouseTest() { <br />
+        
+        var mouse = document.getElementById('mouseOutput');  <br />
+        var mouseOutput = document.getElementById('mouseOutput2');  <br />
+        mouse.innerHTML = "&lt;button class='button' <br /> id='touchButton'&gt;Try touching me&lt;/button&gt;";  <br />
+        mouse.onmouseover = function() {  <br />
+            mouseOutput.innerHTML = "THE MOUSE IS TOUCHING ME!!!"; }<br />
+        
+        mouse.onmouseout = function() { <br />
+            mouseOutput.innerHTML = "No mouse here... ";
+        } <br />
+
+    }</p>
+            
+                  <button class="button" id="startButton" onclick="mouseTest()">Click me to try it out!</button>
+             <p id = "mouseOutput2"></p>
+            <p id="mouseOutput"> </p>
+           
+            <script>
+                 function mouseTest() {
+        
+        var mouse = document.getElementById('mouseOutput');
+        var mouseOutput = document.getElementById('mouseOutput2');
+        mouse.innerHTML = "<br><button class='button' id='touchButton'>Try touching me</button><br>";
+
+        mouse.onmouseover = function() {
+            mouseOutput.innerHTML = "THE MOUSE IS TOUCHING ME!!!<br>";
+        }
+        mouse.onmouseout = function() {
+            mouseOutput.innerHTML = "No mouse here... ";
+        }
+
+    }
+            </script>  
             
             <p></p>
         </header>
