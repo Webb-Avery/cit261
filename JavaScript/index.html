@@ -7,17 +7,29 @@
     </head>
 
 
-    <body>
+    <body onload="loadTest()">
         <header> 
             <h1 style = " text-align: center">JavaScript Events for Mobile Devices</h1>
             
-            <h2>onTouch Events</h2>
-           
-            
             <h2>onLoad Event</h2>
             
+            <p>We use the onload event when we want something to happen as soon as it is loaded. In this case we will simply change a div element to say loaded when the body is finishd loading.</p>
+            
+            <p style="color: darkviolet">
+            &lt;body onload="loadTest()"&gt; <br /> <br/>
+            
+            function loadTest() {<br />
+                  document.getElementById("loadOutput").innerHTML = "LOADED!";
+                }<br />
+            </p>
+            <div id="loadOutput">Not Loaded..</div>
+            <script>
+                function loadTest() {
+                  document.getElementById("loadOutput").innerHTML = "LOADED!";
+                }
+            </script>
             <h2>onClick Event</h2>
-            <p>&lt; button type="button" class="button" onclick="addFun()"&gt;Run Animation&lt;/button&gt;   </p>
+            <p style="color: darkviolet">&lt; button type="button" class="button" onclick="addFun()"&gt;Run Animation&lt;/button&gt;   </p>
             
              <button type="button" class="button" onclick="addFun()">Run Animation</button>
         
@@ -30,7 +42,7 @@
         </script>
             
             <h2>onMouseOver Event </h2>
-        <p>       function mouseTest() { <br />
+        <pstyle="color: darkviolet">       function mouseTest() { <br />
         
         var mouse = document.getElementById('mouseOutput');  <br />
         var mouseOutput = document.getElementById('mouseOutput2');  <br />
