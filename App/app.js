@@ -52,3 +52,24 @@ function reset()
 
     document.getElementById("apr").focus();
 }
+
+
+var httpRequest;
+function makeRequest(url)
+{
+    httpRequest = false;
+    httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = content();
+    httpRequest.open("GET", url, true);
+    httpRequest.send();
+}
+
+function content()
+{
+    if (httpRequest.readyState == 4 && httpRequest.status = 200)
+        {
+            var myText = httpRequest.responseText;
+            document.getElementById("data").innerHTML = myText;
+        }
+}
+
