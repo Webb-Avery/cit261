@@ -25,6 +25,7 @@ input[type=number] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+     transition:all 3s ease;
 }
 input[type=button], input[type = reset] {
     width: 100%;
@@ -32,23 +33,36 @@ input[type=button], input[type = reset] {
     margin: 8px 0;
     border-radius: 4px;
     box-sizing: border-box;
+     transition:all 3s ease;
 }
-
-table, div {
+ div, table{
     background-color: cadetblue;
     text-align: center;
     margin: auto;
     padding: 10px;
     border-radius: 4px;
     width: 470px;
+    display: block;
+    transition: all 3s linear;
+}
+
+p {
+    background-color: cadetblue;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 4px;     
+
 }
 
 div {
     width: 450px;
+    
 }
 
 td {
     padding: 5px;
+    transition:all 3s ease;
 }
 
 @media only screen and (max-width: 500px) {
@@ -63,3 +77,5 @@ td {
         width: 100%;
     }
 }
+
+

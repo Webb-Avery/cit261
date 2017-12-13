@@ -1,75 +1,131 @@
+var rowCount = 2;
+var budgetItems = ["Car", "Food"]
+var budget;
 function tryCalc()
 {
-    if (document.getElementById("payment").innerHTML === "Monthly Payment: ")
-        return;
     calc();
 }
 function calc()
 {
-    var apr = document.getElementById("apr");
-    var term = document.getElementById("term");
-    var amount = document.getElementById("amount");
-    var monthPayment = 0;
-    var interest = (apr.value * 0.01) / 12;
-    var top = interest * Math.pow(1 + interest, term.value * 12)
-    var bottom = Math.pow( 1 + interest, term.value * 12) - 1;
-    monthPayment = (amount.value * top) / bottom;
+    var item;
+    total = 0;
 
-    monthPayment = monthPayment.toFixed(2);
-
-    if(isNaN(parseFloat(apr.value)) || apr.value == "")
+    for (x in budgetItems)
     {
-        alert("Your APR is not correct. Please try again.");
-        apr.focus();
-        apr.select();
-        return;
-
+        item = document.getElementById(budgetItems[x]);
+        
+        
+         if(isNaN(parseInt(item.value)) || item.value == "")
+         {
+         // the value is not a number or not there 
+         }
+        else{
+            
+            total = total + parseInt(item.value);
     }
-    if(isNaN(parseInt(term.value)) || term.value == "")
-    {
-        alert("Your loan term is not correct. Please try again.");
-        term.focus();
-        term.select();
-        return;
-
     }
-    if(isNaN(parseInt(amount.value)) || amount.value == "")
-    {
-        alert("Your loan amount is not correct. Please try again.");
-        amount.focus();
-        amount.select();
-        return;
-
-    }
-    document.getElementById("payment").innerHTML = ("Monthly Payment: $ " + monthPayment);
-}
-function reset() 
-{
-    document.getElementById("apr").value = "";
-    document.getElementById("term").value = "";
-    document.getElementById("amount").value = "";
-    document.getElementById("payment").innerHTML = "";
-
-    document.getElementById("apr").focus();
+    
+    budget = total;
+    document.getElementById("totalBudget").innerHTML = ("$ " + total);
 }
 
 
-var httpRequest;
-function makeRequest(url)
-{
-    httpRequest = false;
-    httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = content();
-    httpRequest.open("GET", url, true);
-    httpRequest.send();
+function addItem() {
+   var itemName = document.getElementById("itemName").value;
+    budgetItems.push(itemName);
+    var table = document.getElementById("budgetTable");
+    var row = table.insertRow(rowCount++);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = itemName + ":";
+    cell2.innerHTML = "<input type='number' id=" + itemName + " min='0' step='.01' placeholder='' onchange='tryCalc()' value='0'>";
+    
+
 }
 
-function content()
-{
-    if (httpRequest.readyState == 4 && httpRequest.status = 200)
-        {
-            var myText = httpRequest.responseText;
-            document.getElementById("data").innerHTML = myText;
+function goOnVacation(){
+    
+    addVacationCol();
+    
+    var item;
+    for (x in budgetItems)
+    {
+        item = document.getElementById(budgetItems[x]);
+        item.setAttribute("readonly", "readonly");
+        item.style = "background-color:gray";
+    }
+    document.getElementById("add").style = "transform: scale(.1)";
+    document.getElementById("vaca").style = "transform: scale(.4)";
+    stateChange(-1);
+    var d = document.getElementById("totalBudget");
+    d.style = "background-color:gray";
+}
+
+function stateChange(newState) {
+    setTimeout(function(){
+        if(newState == -1){
+            document.getElementById("add").style = "display: none";
+            document.getElementById("vaca").style = "display:none";
         }
+    }, 3000);
 }
 
+function addVacationCol() {
+    var table = document.getElementById("budgetTable");
+    var i;
+    
+    for( i= 0; i < table.rows.length;i++) {
+        createCell(table.rows[i].insertCell(table.rows[i].cells.length), i);
+    }
+}
+function calcFinal() {
+
+    var item;
+    var total = 0;
+
+    for (x in budgetItems)
+    {
+        x = budgetItems[x] + "final";
+        item = document.getElementById(x);
+        
+        
+         if(isNaN(parseInt(item.value)) || item.value == "")
+         {
+         // the value is not a number or not there 
+         }
+        else{
+            
+            total = total + parseInt(item.value);
+        }
+        
+        
+    }
+    
+    if(total < budget){
+        document.getElementById("finalCost").style = "background-color:green";
+    }
+    else if(total == budget){
+        document.getElementById("finalCost").style = "background-color:yellow";
+    }
+    else {
+        document.getElementById("finalCost").style = "background-color:red";
+    }
+    
+    document.getElementById("finalCost").innerHTML = ("$ " + total);
+    
+}
+function createCell(cell, text) {
+    if (text != rowCount)
+    {
+        var input = document.createElement('input'); 
+        input.type = 'number';
+        input.id = budgetItems[text] + "final";
+        input.setAttribute("onchange", 'calcFinal()');          
+        cell.appendChild(input);                   
+    }
+    else {
+        var p = document.createElement('p');
+        p.id = 'finalCost';
+        cell.appendChild(p);
+    }
+}
