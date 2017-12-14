@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vacation Calculator</title>
         <link rel="stylesheet" href="app.css">
         <script src="app.js" type="text/javascript"></script>
@@ -12,40 +13,41 @@
         <header> 
             <h1 style = " text-align: center">Vacation Calculator</h1>
         </header>
-
-        <form onrest="reset()">
-            <table id="budgetTable">
-                <tr>
-                    <td >Car:</td>
-                    <td><input type="number" id="Car" min="0" step=".01" value="0" onchange="tryCalc()"></td>
-                </tr>
-                <tr>
-                    <td>Food:  </td>
-                    <td><input type="number" id="Food"  min="0" step=".01" value="0" onchange="tryCalc()" ></td>
-                </tr>
-                 
-                <tr>
-                    <td>Cost:  </td>
-                    <td><p id="totalBudget"></p></td>
-                </tr>
-            </table>
-            <br>
-            <table id="add" >
-                <tr>
-                    <td><input type="text" id="itemName" placeholder="Airfare"></td>
-                    <td><input type="button" value="Add Budget Item" onclick="addItem()"></td>
-                    
-                </tr>
-            </table>
-            <br/>
-            
-            <div id="vaca">
-            <input type="button" value="Go on Vacation" onclick="goOnVacation()">
-            </div>
-            
-        </form>
-
         
+        <table id="budgetTable">
+            <tr>
+                <td style="text-decoration: underline"><b>Budget Item</b></td>
+                <td style="text-decoration: underline"><b>Budgeted Amount </b></td>
+            </tr>
+            <tr>
+                <td >Car:</td>
+                <td><input type="number" id="Car" min="0" step=".01"  onchange="tryCalc()"></td>
+            </tr>
+            <tr>
+                <td>Food:  </td>
+                <td><input type="number" id="Food"  min="0" step=".01" onchange="tryCalc()" ></td>
+            </tr>     
+            <tr>
+                <td>Cost:  </td>
+                <td><p id="totalBudget"></p></td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        <table id="add" >
+            <tr>
+                <td><input type="text" id="itemName" placeholder="Airfare"></td>
+                <td><input type="button" value="Add Budget Item" onclick="addItem()"></td>
+            </tr>
+        </table>
+        
+        <br/>
+            
+        <div id="vaca">
+            <input type="button" value="Go on Vacation" onclick="goOnVacation()">
+        </div>
+                
     </body>           
 </html>
 

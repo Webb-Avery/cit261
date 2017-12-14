@@ -25,6 +25,7 @@ input[type=number] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    text-align: center;
      transition:all 3s ease;
 }
 input[type=button], input[type = reset] {
@@ -42,8 +43,8 @@ input[type=button], input[type = reset] {
     padding: 10px;
     border-radius: 4px;
     width: 470px;
-    display: block;
     transition: all 3s linear;
+     max-width: 100%
 }
 
 p {
@@ -53,6 +54,7 @@ p {
     padding: 10px;
     border-radius: 4px;     
 
+    
 }
 
 div {
@@ -70,10 +72,10 @@ td {
         background-color: lightblue;
         
     }
-    .table {
+    table {
         width: 100%;
     }
-    .div {
+    div {
         width: 100%;
     }
 }

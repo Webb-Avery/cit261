@@ -1,11 +1,8 @@
-var rowCount = 2;
+var rowCount = 3;
 var budgetItems = ["Car", "Food"]
 var budget;
+
 function tryCalc()
-{
-    calc();
-}
-function calc()
 {
     var item;
     total = 0;
@@ -13,7 +10,6 @@ function calc()
     for (x in budgetItems)
     {
         item = document.getElementById(budgetItems[x]);
-        
         
          if(isNaN(parseInt(item.value)) || item.value == "")
          {
@@ -38,12 +34,13 @@ function addItem() {
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = itemName + ":";
-    cell2.innerHTML = "<input type='number' id=" + itemName + " min='0' step='.01' placeholder='' onchange='tryCalc()' value='0'>";
+    cell2.innerHTML = "<input type='number' id=" + itemName + " min='0' step='.01' placeholder='' onchange='tryCalc()'>";
     
 
 }
 
 function goOnVacation(){
+    tryCalc();
     
     addVacationCol();
     
@@ -115,11 +112,21 @@ function calcFinal() {
     
 }
 function createCell(cell, text) {
-    if (text != rowCount)
+
+    if (text == 0)
+    {
+        var b = document.createElement('b');
+        txt = document.createTextNode("Final Cost");
+        b.appendChild(txt);
+        b.setAttribute("style", "text-decoration: underline");
+        cell.appendChild(b);
+        
+    }
+    else if (text != rowCount)
     {
         var input = document.createElement('input'); 
         input.type = 'number';
-        input.id = budgetItems[text] + "final";
+        input.id = budgetItems[text -1] + "final";
         input.setAttribute("onchange", 'calcFinal()');          
         cell.appendChild(input);                   
     }
