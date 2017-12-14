@@ -73,4 +73,35 @@ td {
     }
 }
 
+span {
+ text-align: center;
+    margin: auto;
+    padding: 10px;
+    border-radius: 4px;
+    width: 470px;
+    transition: all 3s linear;
+     max-width: 100%s
+}
 
+#plane {
+    width: 10px;
+    height: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: azure;
+    position: relative;
+
+    animation-name: frames;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    animation-duration: 12s;
+}
+
+
+@keyframes frames {
+    0%   { left: -200px;top: -40px; transform: rotate(0deg);}
+    40%  {transform: rotate(0deg);}
+    50%  { left: 200px;top: 0px; transform: rotate(180deg);}
+    90%   { transform: rotate(180deg);}
+    100% { left: -200px; top:-40px;transform: rotate(360deg);}
+    }
