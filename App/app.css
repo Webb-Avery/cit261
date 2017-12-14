@@ -53,7 +53,7 @@ p {
     margin: auto;
     padding: 10px;
     border-radius: 4px;     
-
+    transition: all 3s ease-out;
     
 }
 
